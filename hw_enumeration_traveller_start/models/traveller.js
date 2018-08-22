@@ -48,7 +48,7 @@ Traveller.prototype.getUniqueModesOfTransport = function () {
   modesOfTransports = this.getModesOfTransport()
   result = modesOfTransports.filter((transport, index, self) => {
     return self.indexOf(transport) === index;
-  // this works because self.indexOf teturns the first index in self (modesOfTransports) at which transport occurs
+  // this works because self.indexOf returns the first index in self (modesOfTransports) at which transport occurs
   });
   return result;
 };
