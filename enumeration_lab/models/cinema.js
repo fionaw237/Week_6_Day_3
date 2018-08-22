@@ -10,7 +10,7 @@ Cinema.prototype.filmsByTitle = function() {
 
 Cinema.prototype.findFilm = function(title) {
   return this.films.find(function(film) {
-    return (film.title === title) ? true : false;
+    return (film.title === title)
   })
 }
 
