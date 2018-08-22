@@ -48,49 +48,76 @@ const numbers = [1, 2, 3, 4, 5];
 // }
 
 // alternative notation:
-const multiplyByTwo = () => {
-  let multipliedArray = [];
-  numbers.forEach((number) => {
-    multipliedArray.push(number * 2);
-  })
+// const multiplyByTwo = () => {
+//   let multipliedArray = [];
+//   numbers.forEach((number) => {
+//     multipliedArray.push(number * 2);
+//   })
+//   return multipliedArray;
+// }
+
+//using map
+// const multiplyByTwo = function(){
+//   const multipliedArray = numbers.map(number => number*2);
+//   return multipliedArray;
+// }
+
+const multiplyByTwo = function(){
+  const multipliedArray = numbers.map((number) => {
+    return number*2
+  });
   return multipliedArray;
 }
+//
+// // using own foreach function
+// const myForEach = function(array, callback){
+//   for (let element of array){
+//     callback(element)
+//   }
+// }
 
-// using own foreach function
-const myForEach = function(array, callback){
-  for (let element of array){
-    callback(element)
-  }
-}
 
-
-//console.log(multiplyByTwo());
+console.log(multiplyByTwo());
 
 // Using the forEach enumeration method, complete the following tasks:
 //
 // - Write a function called getEvens that returns a new array that only contains the even numbers from the original array.
 
-const getEvens = function(){
-  let arrayOfEvens = [];
-  myForEach(numbers, (number) => {
-    if (number % 2 === 0){
-      arrayOfEvens.push(number);
-    }
-  })
-  return arrayOfEvens;
-}
+// const getEvens = function(){
+//   let arrayOfEvens = [];
+//   myForEach(numbers, (number) => {
+//     if (number % 2 === 0){
+//       arrayOfEvens.push(number);
+//     }
+//   })
+//   return arrayOfEvens;
+// }
+//
 
-console.log(getEvens());
+// using filter
+const getEvens = function(){
+  const result = numbers.filter((number) => {
+    return number % 2 === 0;
+  })
+  return result
+}
+ console.log(getEvens());
 
 // - Write a function called sumElements that returns the sum total of all the elements of the original array.
 // use arrow function when not assigning function to a variable
 
+// const sumElements = function(){
+//   let total = 0;
+//   numbers.forEach((number) => {
+//     total += number;
+//   });
+//   return total;
+// }
+//
 const sumElements = function(){
-  let total = 0;
-  numbers.forEach((number) => {
-    total += number;
-  });
-  return total;
+  const result = numbers.reduce((total, number) => {
+    return total + number;
+  }, 15); // 15 is the starting pont here so get result = 30
+  return result;
 }
-
 console.log(sumElements());
