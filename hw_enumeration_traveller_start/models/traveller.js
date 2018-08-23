@@ -53,6 +53,9 @@ Traveller.prototype.getUniqueModesOfTransport = function () {
   return result;
 };
 
+// return [... new Set(this.getModesOfTransport())]
+// set is an array that only contains unique values. The ... means take the array part out and navigate as a list.
+// same as Array.from(new Set(this.getModesOfTransport()))
 
 
 module.exports = Traveller;
