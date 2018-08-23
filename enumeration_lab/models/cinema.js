@@ -10,7 +10,7 @@ Cinema.prototype.filmsByTitle = function() {
 
 Cinema.prototype.findFilm = function(title) {
   return this.films.find(function(film) {
-    return (film.title === title)
+    return film.title === title
   })
 }
 
@@ -26,9 +26,9 @@ Cinema.prototype.hasFilmFromYear = function(year) {
   })
 }
 
-Cinema.prototype.filmsOverLength = function(time) {
+Cinema.prototype.filmsOverLength = function(length) {
   return this.films.every(function(film) {
-    return film.length > time;
+    return film.length > length;
   })
 }
 
